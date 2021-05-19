@@ -4,7 +4,7 @@ services:
         image: meamzy/magento:installed
         container_name: web
         restart: always
-        user: application
+        user: root
         environment:
           - WEB_DOCUMENT_ROOT=/app/pub
           - PHP_DATE_TIMEZONE=EST
