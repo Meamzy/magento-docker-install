@@ -1,7 +1,7 @@
 version: '3.6'
 services:
     web:
-        image: webdevops/php-apache-dev:7.4
+        image: meamzy/magento:installed
         container_name: web
         restart: always
         user: application
