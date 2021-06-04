@@ -1,10 +1,10 @@
 version: '3.6'
 services:
     web:
-        image: webdevops/php-apache-dev:7.4
+        image: meamzy/magento:installed
         container_name: web
         restart: always
-        user: application
+        user: root
         environment:
           - WEB_DOCUMENT_ROOT=/app/pub
           - PHP_DATE_TIMEZONE=EST
@@ -20,9 +20,6 @@ services:
           - "443:443"
           - "32823:22"
           - "9000:9000"
-        links:
-          - mysql
-          - elasticsearch
         
     elasticsearch:
         container_name: elasticsearch
@@ -54,8 +51,6 @@ services:
           - PMA_PASSWORD=root
         ports:
           - "8080:80"
-        links:
-          - mysql:db
         depends_on:
           - mysql
 volumes:
